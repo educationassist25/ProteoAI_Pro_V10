@@ -4,9 +4,9 @@ heatmap_module.py - Publication-quality clustered heatmap of significant protein
 Features:
   - Independent row/column clustering toggle (rows only / columns only / both / none)
   - Group annotation bar with legend
-  - Predefined and custom color palettes, reversible, with adjustable Z-score range
+  - Predefined and custom color palettes, reversible, with adjustable Z-Score range
   - Optional custom color breakpoints (discrete color bands)
-  - Horizontal colorbar below the heatmap, labeled with Z-score / normalized intensity
+  - Horizontal colorbar below the heatmap, labeled with Z-Score / normalized intensity
   - Multi-format, high-resolution export (PNG, PDF, SVG, JPEG, TIFF)
 """
 
@@ -561,7 +561,7 @@ def clustered_heatmap(data_log2: pd.DataFrame, significant_features, meta: pd.Da
     ax_cbar = fig.add_axes([cbar_left, cbar_bottom, cbar_w, cbar_h_in / H])
     cbar = fig.colorbar(im, cax=ax_cbar, orientation="horizontal")
     cbar.set_label("Z-Score", fontsize=1 * font_size, fontfamily=font_family)
-    cbar.ax.tick_params(labelsize=0.9 * font_size)
+    cbar.ax.tick_params(labelsize=1 * font_size)
     for lbl in cbar.ax.get_xticklabels():
         lbl.set_fontfamily(font_family)
 
